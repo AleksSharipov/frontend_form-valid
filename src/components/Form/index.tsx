@@ -27,9 +27,11 @@ const Form: React.FC = () => {
     return setIsValid(false)
   }
 
+  const regex = new RegExp('^[0-9]+$');
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    if (event.target.value.length >= 3 && event.target.value.length <= 10) {
+    if (event.target.value.length >= 3 && event.target.value.length <= 10 && regex.test(event.target.value)) {
       setIsValid(true)
     } else setIsValid(false)
   }

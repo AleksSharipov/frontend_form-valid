@@ -12,11 +12,13 @@ const Table: React.FC = () => {
 
   return (
     <div className={style.table}>
-      {
-        data && data.map((el) => {
-          return <div key={el._id}>{el.number}<br /></div>
-        })
-      }
+      <ul className={style.list}>
+        {
+          data && data.map((el) => {
+            return <li className={style.list__element} key={el._id}>{el.number}<br /></li>
+          })
+        }
+      </ul>
     </div>
   )
 }
