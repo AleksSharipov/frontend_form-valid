@@ -16,8 +16,9 @@ console.log(process.env.REACT_APP_API_URL)
 let socket: Socket;
 function getSocket() {
   if (!socket) {
-    socket = io(process.env.REACT_APP_API_URL, {
+    socket = io('https://sharipov-backend-form-valid.herokuapp.com/', {
       withCredentials: true,
+      transports: ['websocket']
     });
   }
   return socket;
@@ -25,7 +26,7 @@ function getSocket() {
 
 export const myApi = createApi({
   reducerPath: 'myApi',
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://sharipov-backend-form-valid.herokuapp.com/' }),
   endpoints: (build) => ({
     sendMessage: build.mutation<PhoneNumber, string>({
       queryFn: (phoneNumber: string) => {
