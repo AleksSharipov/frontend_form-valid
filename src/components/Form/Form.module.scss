@@ -1,0 +1,80 @@
+@import '../../scss/variables';
+
+.login {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  width: calc(100% - 50px);
+  border-radius: 10px;
+  padding: 45px;
+
+
+  h2 {
+    font-weight: 800;
+    font-size: 32px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;    
+
+    .fieldset {
+      display: flex;
+      flex-flow: column nowrap;
+      position: relative;
+      margin-bottom: 20px;
+
+      &__content {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+
+      input {
+        padding: 14px 20px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        max-width: 95%;
+        width: 100%;
+        margin-left: 10px;
+        color: black;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      &__content_valid {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 5px;
+        color: rgb(252, 162, 162);
+        font-weight: bold;
+      }
+
+      .success {
+        border-color: $grey;
+      }
+      .error {
+        border-color: rgb(252, 162, 162);
+      }
+    }
+
+    button {
+      border: none;
+      padding: 14px 0;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      background-color: $blue;
+      cursor: pointer;
+    }
+
+    .disabled {
+      pointer-events: none;
+      // opacity: .3;
+      background-color: #b7d4fe;
+    }
+  }
+}
