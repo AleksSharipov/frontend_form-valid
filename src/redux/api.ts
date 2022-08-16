@@ -10,6 +10,8 @@ interface PhoneNumber {
   updatedAt: string;
 }
 
+console.log(process.env.REACT_APP_API_URL)
+
 export const myApi = createApi({
   reducerPath: 'myApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_URL }),
