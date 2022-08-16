@@ -8,6 +8,8 @@ const Table: React.FC = () => {
 
   const { data = [] } = useGetNumbersQuery();
 
+  console.log(data)
+
   return (
     <div className={style.table}>
       {
