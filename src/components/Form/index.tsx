@@ -33,7 +33,9 @@ const Form: React.FC = () => {
     setValue(event.target.value);
     if (event.target.value.length >= 3 && event.target.value.length <= 10 && regex.test(event.target.value)) {
       setIsValid(true)
-    } else setIsValid(false)
+    } else {
+      setIsValid(false)
+    }
   }
 
   const checkInput = (event: React.KeyboardEvent<Element>) => {

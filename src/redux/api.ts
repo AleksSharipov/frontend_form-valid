@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { io, Socket } from 'socket.io-client';
 
