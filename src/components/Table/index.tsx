@@ -6,15 +6,19 @@ import style from './Table.module.scss';
 
 const Table: React.FC = () => {
 
-  const { data = [] } = useGetNumbersQuery();
+  const { data = [], isLoading } = useGetNumbersQuery();
 
-  console.log(data)
+  console.log(isLoading)
+
+  if (isLoading) {
+    return <>Загрузка...</>
+  }
 
   return (
     <div className={style.table}>
       <ul className={style.list}>
         {
-          data && data.map((el) => {
+          isLoading ? <>Загрузка...</> : data && data.map((el) => {
             return <li className={style.list__element} key={el._id}>{el.number}<br /></li>
           })
         }
